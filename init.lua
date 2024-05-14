@@ -95,6 +95,8 @@ vim.g.have_nerd_font = false
 
 if vim.g.neovide then
   vim.g.neovide_fullscreen = true
+  vim.g.neovide_cursor_smooth_blink = true
+  vim.g.neovide_hide_mouse_while_typing = true
 end
 
 -- [[ Setting options ]]
@@ -581,6 +583,14 @@ require('lazy').setup({
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
+        hls = {
+          settings = {
+            haskell = {
+              formattingProvider = 'fourmolu',
+            },
+          },
+          filetypes = { 'haskell', 'lhaskell', 'cabal' },
+        },
 
         lua_ls = {
           -- cmd = {...},
