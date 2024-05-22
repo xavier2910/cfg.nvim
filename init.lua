@@ -718,6 +718,7 @@ require('lazy').setup({
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
 
+      require('luasnip.loaders.from_lua').load { paths = { '~/.snippets' } }
       cmp.setup {
         snippet = {
           expand = function(args)
@@ -743,7 +744,7 @@ require('lazy').setup({
           -- Accept ([y]es) the completion.
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
-          ['<C-y>'] = cmp.mapping.confirm { select = true },
+          ['<leader>'] = cmp.mapping.confirm { select = true },
 
           -- If you prefer more traditional completion keymaps,
           -- you can uncomment the following lines
